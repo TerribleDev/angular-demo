@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html ng-app="awesome">
+
+  <head>
+    <script data-require="angular.js@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular.js"></script>
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js"></script>
+  </head>
+
+  <body ng-controller="awesome">
+    <h1>Hi! my name is {{ username }}</h1>
+    <input type="text" ng-model="username" />
+    <input type="button" ng-click="runMe()" value="go dawg" />
+  </body>
+
+</html>
