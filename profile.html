@@ -1,0 +1,60 @@
+<html ng-app="awesome">
+    <head>
+        <title></title>
+            <script
+  src="http://code.jquery.com/jquery-3.1.1.slim.min.js"
+  integrity="sha256-/SIrNqv8h6QGKDuNoLGA4iret+kyesCkHGzVUUV0shc="
+  crossorigin="anonymous"></script>
+            <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+            <script data-require="angular.js@*" data-semver="1.5.8" src="https://code.angularjs.org/1.5.8/angular.js"></script>
+            <!-- Firebase -->
+            <script src="https://www.gstatic.com/firebasejs/3.4.1/firebase.js"></script>
+            <!-- AngularFire -->
+            <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+            <script>
+                // Initialize the Firebase SDK
+
+                    firebase.initializeApp(config);
+                </script>
+            <script src="profile.js"></script>
+    <body>
+        <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
+        <link href="card.css" rel="stylesheet">
+            <div class="container" ng-controller="awesome">
+                <div class="row">
+                    <div class="col-md-offset-4 col-md-4">
+                        <div ng-hide="firebaseUser">
+                            <p>Welcome, please sign in.</p>
+                            <button ng-click="auth.$signInWithPopup('google')">Sign In With google</button>
+                        </div>
+                        <div class="card hovercard" ng-show="firebaseUser">
+                            <div class="cardheader">
+                            </div>
+                            <div class="avatar">
+                                <img alt="" src="http://www.gravatar.com/avatar/333e3cea32cd17ff2007d131df336061.jpg?s=300">
+                            </div>
+                            <div class="info">
+                                <div class="title">
+                                    <a target="_blank" href="http://terribledev.io/">TerribleDev</a>
+                                </div>
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="desc" type="text"  ng-model="profile.ln1"></input><br />
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="desc" type="text"  ng-model="profile.ln2"></input><br />
+                               &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input class="desc" type="text"  ng-model="profile.ln3"></input><br />
+                            </div>
+                            <div class="bottom">
+                                <a class="btn btn-primary btn-twitter btn-sm" href="https://twitter.com/terribledev">
+                                    <i class="fa fa-twitter"></i>
+                                </a>
+                                <a class="btn btn-info btn-sm" rel="publisher"
+                                href="https://github.com/terribledev">
+                                    <i class="fa fa-github"></i></a>
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+    </body>
+</html>
